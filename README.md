@@ -24,3 +24,7 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
+<br/>
+
+alter table hb_student_tracker.student auto_increment=1000\
+truncate hb_student_tracker.student 
