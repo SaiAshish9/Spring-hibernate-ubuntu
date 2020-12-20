@@ -64,3 +64,5 @@ CREATE TABLE `instructor` (
 
 SET FOREIGN_KEY_CHECKS = 1;
 ```
+![Screenshot from 2020-12-20 13-43-30](https://user-images.githubusercontent.com/43849911/102708479-7abd0600-42c9-11eb-90d8-8a84d6b63a64.png)
+
