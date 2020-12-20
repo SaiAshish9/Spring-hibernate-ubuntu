@@ -123,6 +123,7 @@ CREATE TABLE `course` (
 SET FOREIGN_KEY_CHECKS = 1;
 
 ```
+![Screenshot from 2020-12-20 16-30-56](https://user-images.githubusercontent.com/43849911/102711580-cfb84680-42e0-11eb-9fd8-35eb0ad855d3.png)
 
 
 
