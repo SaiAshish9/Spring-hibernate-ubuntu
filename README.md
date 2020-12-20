@@ -1,5 +1,6 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04 <br/>
 https://www.youtube.com/watch?v=IWXQeXHDerg <br/>
+```
 Go to app store.
 Search for mysql-workbench.
 Click on permission.
@@ -26,8 +27,9 @@ CREATE TABLE `student` (
 
 <br/>
 
-alter table hb_student_tracker.student auto_increment=1000\
-truncate hb_student_tracker.student\
+alter table hb_student_tracker.student auto_increment=1000
+truncate hb_student_tracker.student
+```
 
 ```
 DROP SCHEMA IF EXISTS `hb-01-one-to-one-uni`;
