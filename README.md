@@ -29,6 +29,7 @@ CREATE TABLE `student` (
 alter table hb_student_tracker.student auto_increment=1000\
 truncate hb_student_tracker.student\
 
+```
 DROP SCHEMA IF EXISTS `hb-01-one-to-one-uni`;
 
 CREATE SCHEMA `hb-01-one-to-one-uni`;
@@ -61,4 +62,4 @@ CREATE TABLE `instructor` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 SET FOREIGN_KEY_CHECKS = 1;
-
+```
