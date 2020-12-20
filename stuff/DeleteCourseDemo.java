@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 import com.hibernateubuntu.entity.Course;
 import com.hibernateubuntu.entity.Instructor;
 import com.hibernateubuntu.entity.InstructorDetail;
-import com.hibernateubuntu.entity.Review;
 import com.hibernateubuntu.entity.Student;
 
 public class DeleteCourseDemo {
@@ -18,8 +17,6 @@ public class DeleteCourseDemo {
 				                 .addAnnotatedClass(Instructor.class)
 				                 .addAnnotatedClass(InstructorDetail.class)
 				                 .addAnnotatedClass(Course.class)
-				                 .addAnnotatedClass(Review.class)
-				                 .addAnnotatedClass(Student.class)
 				                 .buildSessionFactory();
 				                 
 		Session session = factory.getCurrentSession();	  
@@ -29,13 +26,13 @@ public class DeleteCourseDemo {
 		
 			
 			session.beginTransaction();
-		
-			int courseId =10;
-
-			Course tempC = session.get(Course.class,courseId);
 			
-			session.delete(tempC);
-		
+			int theId =10 ;
+			
+			Course tempCourse = session.get(Course.class, theId);
+			
+	        session.delete(tempCourse);
+			
 			session.getTransaction().commit();
 		}
 		finally {

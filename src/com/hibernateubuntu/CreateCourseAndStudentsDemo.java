@@ -10,7 +10,7 @@ import com.hibernateubuntu.entity.InstructorDetail;
 import com.hibernateubuntu.entity.Review;
 import com.hibernateubuntu.entity.Student;
 
-public class DeleteCourseDemo {
+public class CreateCourseAndStudentsDemo {
 
 	public static void main(String[] args) {
 		SessionFactory factory = new Configuration()
@@ -29,13 +29,22 @@ public class DeleteCourseDemo {
 		
 			
 			session.beginTransaction();
-		
-			int courseId =10;
-
-			Course tempC = session.get(Course.class,courseId);
 			
-			session.delete(tempC);
-		
+			Course temp = new Course("Pacman");
+					
+			session.save(temp);
+			
+			Student tempS1 = new Student("sai","ashish","sai@gmail.com");
+			Student tempS2 = new Student("sai9","ashish","sai9@gmail.com");
+
+			temp.addStudent(tempS1);
+			temp.addStudent(tempS2);
+			
+			session.save(tempS1);
+			session.save(tempS2);
+			
+			System.out.println(temp.getStudents());
+			
 			session.getTransaction().commit();
 		}
 		finally {
