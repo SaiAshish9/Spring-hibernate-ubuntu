@@ -1,5 +1,8 @@
 package com.hibernateubuntu.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,32 +10,45 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="instructor")
+@Table(name = "instructor")
 public class Instructor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
+
 	@Column(name = "first_name")
 	private String firstName;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@Column(name = "email")
 	private String email;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="instructor_detail_id")
+	@JoinColumn(name = "instructor_detail_id")
 	private InstructorDetail instructorDetail;
 
+	@OneToMany(mappedBy = "instructor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+			CascadeType.REFRESH })
+	private List<Course> courses;
+
 	public Instructor() {
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	public Instructor(String firstName, String lastName, String email) {
@@ -73,7 +89,6 @@ public class Instructor {
 		this.email = email;
 	}
 
-
 	public InstructorDetail getInstructorDetail() {
 		return instructorDetail;
 	}
@@ -88,6 +103,12 @@ public class Instructor {
 				+ ", instructorDetail=" + instructorDetail + "]";
 	}
 	
-	
+	public void add(Course temp) {
+		if(courses == null) {
+			courses = new ArrayList<Course>();
+		}
+		courses.add(temp);
+		temp.setInstructor(this);
+	}
 
 }
