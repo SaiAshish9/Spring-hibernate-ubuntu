@@ -5,13 +5,13 @@ Go to app store.
 Search for mysql-workbench.
 Click on permission.
 Enable Read, add, change, or remove saved password̀s
-<br/>
+
 CREATE USER 'hbstudent'@'localhost' IDENTIFIED BY 'hbstudent';
-<br/>
+
 GRANT ALL PRIVILEGES ON * . * TO 'hbstudent'@'localhost';
-<br/>
+
 ALTER USER 'hbstudent'@'localhost' IDENTIFIED WITH mysql_native_password BY 'hbstudent';
-<br/>
+
 CREATE DATABASE  IF NOT EXISTS `hb_student_tracker`;
 USE `hb_student_tracker`;
 
@@ -25,7 +25,6 @@ CREATE TABLE `student` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-<br/>
 
 alter table hb_student_tracker.student auto_increment=1000
 truncate hb_student_tracker.student
