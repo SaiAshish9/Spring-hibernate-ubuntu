@@ -27,7 +27,7 @@ CREATE TABLE `student` (
 <br/>
 
 alter table hb_student_tracker.student auto_increment=1000\
-truncate hb_student_tracker.student \
+truncate hb_student_tracker.student\
 
 DROP SCHEMA IF EXISTS `hb-01-one-to-one-uni`;
 
