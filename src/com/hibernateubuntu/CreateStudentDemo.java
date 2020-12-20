@@ -16,9 +16,6 @@ public class CreateStudentDemo {
 				                 
 		Session session = factory.getCurrentSession();	  
 		
-		
-		
-		
 		try {
 		
 			Student s = new Student("sai","ashish","sai@gmail.com");
