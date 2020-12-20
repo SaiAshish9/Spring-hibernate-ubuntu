@@ -202,6 +202,9 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ```
 
+![Screenshot from 2020-12-20 20-15-47](https://user-images.githubusercontent.com/43849911/102716187-3731be80-4300-11eb-9221-06fb8b3f50f6.png)
+
+
 ```
 DROP SCHEMA IF EXISTS `hb-05-many-to-many`;
 
